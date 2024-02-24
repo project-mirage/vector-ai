@@ -11,6 +11,17 @@ const showcase = defineCollection({
     }),
 });
 
+const team = defineCollection({
+  type: "data",
+  schema: ({ image }) =>
+    z.object({
+      name: z.string().min(1),
+      image: image(),
+      designation: z.string().min(1),
+    }),
+});
+
 export const collections = {
   showcase,
+  team,
 };

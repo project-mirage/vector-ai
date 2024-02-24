@@ -20,7 +20,7 @@ export default function TeamSliderCard({
   return (
     <div
       ref={ref}
-      className="h-128 relative w-full min-w-[80vw] select-none rounded-lg border-2 border-white max-md:snap-x max-md:snap-mandatory max-md:snap-center md:min-w-[384px]"
+      className="h-96 relative w-full max-w-48 min-w-[80vw] select-none rounded-lg border-2 border-white max-md:snap-x max-md:snap-mandatory max-md:snap-center md:min-w-[384px]"
     >
       <img
         src={image.url}

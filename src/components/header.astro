@@ -1,7 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
+import VectorImage from "@/assets/vector.png";
 import ThemeSwitcher from "@/components/theme-switcher.astro";
 import type { NavItem } from "@/types";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 const navItems: Array<NavItem> = [
   { title: "Features", url: "#features" },
@@ -16,8 +18,7 @@ const navItems: Array<NavItem> = [
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="size-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <Image src={VectorImage} alt="Vector Logo" class="w-24" />
   </a>
 
   <div>
@@ -60,9 +61,7 @@ const navItems: Array<NavItem> = [
               <Icon name="mdi:close" class="size-8" />
             </button>
           </header>
-          <div class="flex justify-center">
-            <Icon name="logomark" class="size-16" />
-          </div>
+
           <nav>
             <ul class="flex flex-col">
               {
