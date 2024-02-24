@@ -8,6 +8,7 @@ import Intro from "@/components/intro.astro";
 import Showcase from "@/components/showcase.astro";
 import Splash from "@/components/splash.astro";
 import GeminiEffect from "@/components/GeminiEffect.tsx";
+import Menu from "@/ui/navbar-menu.tsx";
 import "@/styles/index.css";
 
 const { generator, site } = Astro;
@@ -67,6 +68,8 @@ const description =
     <!-- <Splash /> -->
 
     <GeminiEffect client:load />
+
+    <Menu client:load />
 
     <div class="space-y-24 px-8 py-32">
       <Intro />
