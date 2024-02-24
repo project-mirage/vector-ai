@@ -1,12 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import astronautImage from "@/assets/astronaut.png";
 import HeroImage from "@/components/hero-image.astro";
 import Starfield from "@/components/starfield.astro";
 import VectorImage from "@/assets/vector.png";
-
-const widths = [450, 800];
-const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <section class="relative h-full bg-black">
@@ -16,16 +12,26 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <HeroImage />
   </div>
 
-  <div class="relative flex items-center justify-center w-full h-full place-items-center sm:grid-cols-2">
+  <div
+    class="relative mx-auto flex h-full w-full max-w-screen-lg place-items-center items-center justify-center sm:grid-cols-2"
+  >
     <h2
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
       <Image src={VectorImage} alt="Vector Logo Image" class="w-48" />
 
-      <div
-        class="gradient-text text-center font-extrabold capitalize tracking-tighter text-8xl"
-      >
-        Transform Your <br /> World with AI
+      <div>
+        <p
+          class="gradient-text mb-6 text-center font-extrabold capitalize tracking-tighter text-7xl"
+        >
+          <span class="text-[#B5FDC1]">Innovate,</span>
+          <span class="text-[#FDB5FD]">Impact,</span>
+          <span class="text-[#FDB5B5]">Inspire</span>
+        </p>
+
+        <button>
+          FUCK ZAIN
+        </button>
       </div>
     </h2>
 
