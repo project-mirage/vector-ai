@@ -37,14 +37,16 @@ import { Icon } from "astro-icon/components";
     <meta name="twitter:card" content="summary_large_image" />
   </head>
 
-  <body class="bg-default text-default h-full overflow-x-hidden text-base">
+  <body class="h-full overflow-x-hidden text-base bg-default text-default">
     <Menu client:load />
 
     <ContentSection title="Our Team" id="team" className="mt-16">
       <Icon slot="eyebrow" name="mdi:account-group" class="size-32" />
 
       <Fragment slot="lead">
-        <div class="flex max-w-3xl flex-col items-center gap-4 text-balance px-8">
+        <div
+          class="flex flex-col items-center max-w-3xl gap-4 px-8 text-balance"
+        >
           <p
             class="font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16"
           >
@@ -53,7 +55,9 @@ import { Icon } from "astro-icon/components";
         </div>
       </Fragment>
 
-      <div class="mx-auto mb-6 grid w-5/6 gap-8 md:grid-cols-2 lg:grid-cols-3 lg:mb-16">
+      <div
+        class="grid w-5/6 gap-8 mx-auto mb-6 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
+      >
         {
           teamData.map((member) => {
             const sanitized = member.data.name
@@ -61,15 +65,15 @@ import { Icon } from "astro-icon/components";
               .toLowerCase();
             const url = `/team/${sanitized}`;
 
-            return (
-              <TeamCard
-                name={member.data.name}
-                designation={member.data.designation}
-                image={member.data.image}
-                bio={member.data.bio}
-                socials={member.data.socials}
-              />
-            );
+            // return (
+            //   <TeamCard
+            //     name={member.data.name}
+            //     designation={member.data.designation}
+            //     image={member.data.image}
+            //     bio={member.data.bio}
+            //     socials={member.data.socials}
+            //   />
+            // );
 
             return (
               <a href={url}>
