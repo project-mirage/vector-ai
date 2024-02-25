@@ -23,42 +23,44 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Menu() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <a href="/">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
-            </NavigationMenuLink>
-          </a>
-        </NavigationMenuItem>
+    <div className="fixed top-0 left-0 w-full z-10">
+      <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <a href="/">
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Home
+              </NavigationMenuLink>
+            </a>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="z-10 grid w-[400px] gap-3 bg-white p-4 md:w-[400px] lg:w-[400px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="z-10 grid w-[400px] gap-3 bg-white p-4 md:w-[400px] lg:w-[400px]">
+                {components.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <a href="/team">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Team
-            </NavigationMenuLink>
-          </a>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+          <NavigationMenuItem>
+            <a href="/team">
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                Team
+              </NavigationMenuLink>
+            </a>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   );
 }
 
