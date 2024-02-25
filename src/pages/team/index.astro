@@ -1,0 +1,93 @@
+---
+// import TeamCard from "@/components/TeamSliderCard.tsx";
+import { DirectionAwareHover } from "@/components/DirectionAwareHover.tsx";
+import "@/styles/index.css";
+import "@fontsource-variable/inter";
+import { getCollection } from "astro:content";
+
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const description =
+  "Meet the Innovators Behind Astro: Our Team | Lightning-Fast Web Development";
+
+const teamData = await getCollection("team");
+import TeamCard from "@/components/team-card.astro";
+import Menu from "@/components/Menu";
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>Meet our Team - Vector</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Astro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body class="bg-default text-default h-full overflow-x-hidden text-base">
+    <Menu client:load />
+
+    <div class="">
+      <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+        <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
+          <h2
+            class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white"
+          >
+            Our Team
+          </h2>
+          <p
+            class="font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16"
+          >
+            Explore the whole collection of open-source web components and
+            elements built with the utility classes from Tailwind
+          </p>
+        </div>
+        <div class="mb-6 grid gap-8 md:grid-cols-2 lg:mb-16">
+          {
+            teamData.map((member) => {
+              const sanitized = member.data.name
+                .replaceAll(" ", "-")
+                .toLowerCase();
+              const url = `/team/${sanitized}`;
+
+              return (
+                <TeamCard
+                  name={member.data.name}
+                  designation={member.data.designation}
+                  image={member.data.image}
+                  bio={member.data.bio}
+                  socials={member.data.socials}
+                />
+              );
+
+              return (
+                <a href={url}>
+                  <DirectionAwareHover
+                    client:load
+                    imageUrl={member.data.image.src}
+                  >
+                    <div>
+                      <p>{member.data.name}</p>
+                      <p>{member.data.designation}</p>
+                    </div>
+                  </DirectionAwareHover>
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

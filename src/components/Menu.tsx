@@ -26,9 +26,17 @@ export function Menu() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
+          <a href="/">
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Home
+            </NavigationMenuLink>
+          </a>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
           <NavigationMenuTrigger>Products</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[400px] lg:w-[400px]">
+            <ul className="z-10 grid w-[400px] gap-3 bg-white p-4 md:w-[400px] lg:w-[400px]">
               {components.map((component) => (
                 <ListItem
                   key={component.title}

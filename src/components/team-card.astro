@@ -1,0 +1,68 @@
+---
+import Menu from "@/components/Menu.tsx";
+import { Button } from "@/components/ui/button";
+import { getCollection, z } from "astro:content";
+
+type Props = {
+  name: string;
+  designation: string;
+  bio: string;
+  image: {
+    src: string;
+    width: number;
+    height: number;
+  };
+  socials: {
+    name: string;
+    url: string;
+  }[];
+};
+
+const { name, designation, bio, image, socials } = Astro.props;
+---
+
+<section class="bg-white dark:bg-gray-900">
+  <div
+    class="items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 sm:flex"
+  >
+    <p>
+      <img
+        class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+        src={image.src}
+        alt={name}
+      />
+    </p>
+
+    <div class="p-5">
+      <h3
+        class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        <p>
+          {name}
+        </p>
+      </h3>
+
+      <span class="text-gray-500 dark:text-gray-400">
+        {designation}
+      </span>
+
+      <p class="mb-4 mt-3 font-light text-gray-500 dark:text-gray-400">
+        {bio}
+      </p>
+
+      {
+        socials && (
+          <div class="flex space-x-4">
+            {socials.map((social) => (
+              <a href={social.url}>
+                <Button variant="link">
+                  {social.name.charAt(0).toUpperCase() + social.name.slice(1)}
+                </Button>
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

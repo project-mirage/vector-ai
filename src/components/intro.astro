@@ -1,30 +1,32 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContentSection from "@/components/content-section.astro";
+import { Button } from "@/components/ui/button.tsx";
 ---
 
-<ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="size-32" />
+<ContentSection
+  title="Building for the public while Building in Public"
+  id="intro"
+>
+  <Icon slot="eyebrow" name="mdi:eye" class="size-32" />
+
   <Fragment slot="lead">
-    Astro is a new kind of site builder for the
-    <span class="text-primary">modern</span> web.
-    <span class="text-primary">Lightning-fast</span>
-    performance meets <span class="text-primary">powerful</span> developer experience.
+    <p class="max-w-4xl">
+      We aim to democratize computational intelligence with VECTOR-ized
+      products. As a dream team emerging out of Pakistan, we aim to grab
+      opportunities from existing problems. <br /><br /> We have hopped on a transformative
+      journey to foster innovation, and social entrepreneurship through AI as we
+      harness its power to shape a brighter, more connected and immersive future.
+    </p>
   </Fragment>
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-    <a
-      href="https://docs.astro.build/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
-    >
-      <Icon name="mdi:telescope" class="size-8" />
-      <span>Read the docs</span>
+
+  <div class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a href="/team">
+      <Button>More about the team</Button>
     </a>
-    <a
-      href="https://astro.new/"
-      class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
-    >
-      <Icon name="mdi:rocket" class="size-8" />
-      <span>Try it out</span>
+
+    <a href="/products">
+      <Button variant="link">View our Products</Button>
     </a>
   </div>
 </ContentSection>

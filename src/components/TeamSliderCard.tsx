@@ -35,9 +35,9 @@ export default function TeamSliderCard({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative z-10 flex h-full w-full flex-wrap items-end justify-start bg-gradient-to-b from-transparent to-black"
+            className="relative z-50 flex h-full w-full flex-wrap items-end justify-start bg-gradient-to-b from-transparent to-black"
           >
-            <div className="p-7">
+            <div className="p-7 text-white">
               <h2 className="text-h4">{name}</h2>
               <h3>{designation}</h3>
             </div>
