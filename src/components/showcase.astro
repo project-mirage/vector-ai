@@ -14,15 +14,18 @@ const orderedSites = featuredSites.sort(
 
 <ContentSection title="Showcase" id="showcase">
   <Fragment slot="lead">
-    Astro is <span class="text-primary">versatile</span>.{" "}
-    <span class="text-primary">Explore</span> what's possible and get{" "}
-    <span class="text-primary">inspired</span>.
+    <h2 class="mx-auto max-w-[40vw] text-balance text-center text-xl">
+      Astro comes <span class="text-primary">batteries included</span>. It takes
+      the best parts of
+      <span class="text-primary">state-of-the-art</span>
+      tools and adds its own <span class="text-primary">innovations</span>.
+    </h2>
   </Fragment>
   <div class="max-w-6xl space-y-2">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {orderedSites.map((site) => <ShowcaseCard site={site} />)}
     </div>
-    <p class="text-right text-sm">
+    <p class="text-sm text-right">
       <a class="text-primary" href="https://astro.build/showcase/">
         ...and more &rarr;
       </a>
