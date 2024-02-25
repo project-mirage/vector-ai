@@ -8,7 +8,7 @@ import Intro from "@/components/intro.astro";
 import Showcase from "@/components/showcase.astro";
 import Splash from "@/components/splash.astro";
 import GeminiEffect from "@/components/GeminiEffect.tsx";
-import Menu from "@/ui/navbar-menu.tsx";
+import Menu from "@/components/Menu.tsx";
 import "@/styles/index.css";
 
 const { generator, site } = Astro;
@@ -62,14 +62,13 @@ const description =
   </head>
 
   <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="bg-default text-default h-full overflow-x-hidden text-base selection:bg-secondary selection:text-white"
   >
+    <Menu client:load />
     <Header />
     <!-- <Splash /> -->
 
     <GeminiEffect client:load />
-
-    <Menu client:load />
 
     <div class="space-y-24 px-8 py-32">
       <Intro />
