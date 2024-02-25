@@ -23,7 +23,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Menu() {
   return (
-    <div className="fixed top-0 left-0 w-full z-10">
+    <div className="fixed top-0 left-0 w-full z-10 px-4 md:px-36 bg-white">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
