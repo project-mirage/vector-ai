@@ -1,0 +1,24 @@
+{
+    "name": "Maaz Ali Nadeem",
+    "image": "/src/content/team/_images/maaz-ali-nadeem.avif",
+    "designation": "CEO & Founder",
+    "bio": "This is a placeholder Bio of the team member",
+    "socials": [
+        {
+            "name": "facebook",
+            "url": "https://www.facebook.com/maazalinadeem"
+        },
+        {
+            "name": "twitter",
+            "url": "https://twitter.com/maazalinadeem"
+        },
+        {
+            "name": "linkedin",
+            "url": "https://www.linkedin.com/in/maazalinadeem"
+        },
+        {
+            "name": "instagram",
+            "url": "https://www.instagram.com/maazalinadeem"
+        }
+    ]
+}
