@@ -1,4 +1,3 @@
-"use client";
 import { cn } from "@/utils/cn";
 import { motion, MotionValue } from "framer-motion";
 
@@ -81,17 +80,17 @@ export const GoogleGeminiEffect = ({
 
   return (
     <div className={cn("sticky top-52", className)}>
-      <p className="bg-gradient-to-b from-neutral-100 to-neutral-900 bg-clip-text pb-4 text-center font-extrabold capitalize text-transparent text-lg md:text-7xl">
+      <p className="bg-gradient-to-b from-neutral-100 to-neutral-900 bg-clip-text pb-4 text-center text-lg font-extrabold capitalize text-transparent md:text-7xl">
         {title || "Inspire, create, and innovate"}
       </p>
-      <p className="mx-auto mt-4 max-w-5xl text-balance text-center font-normal !leading-tight text-neutral-400 text-xs md:text-base">
+      <p className="mx-auto mt-4 max-w-5xl text-balance text-center text-xs font-normal !leading-tight text-neutral-400 md:text-base">
         {description || ""}
       </p>
 
       <div className="bg-red-transparent absolute flex h-[890px] w-full items-center justify-center md:-top-40">
         <button className="relative z-10 mt-32 inline-flex h-12 scale-[130%] overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#fff_0%,#777_50%,#fff_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 p-4 font-medium capitalize text-white backdrop-blur-3xl transition-all duration-200 text-sm hover:bg-white hover:text-black">
+          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 p-4 text-sm font-medium capitalize text-white backdrop-blur-3xl transition-all duration-200 hover:bg-white hover:text-black">
             Get in Touch
           </span>
         </button>
