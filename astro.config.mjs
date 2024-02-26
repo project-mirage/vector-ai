@@ -6,6 +6,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
   integrations: [tailwind(), icon(), react()],
+  site: "https://project-mirage.github.io/vector-ai/",
+  base: "/vector-ai",
 });
