@@ -23,13 +23,13 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function Menu() {
   return (
-    <div className="fixed top-0 left-0 w-full z-10 px-4 md:px-36 bg-white">
+    <div className="fixed left-0 top-0 z-10 w-full bg-white px-4 md:px-36">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
             <a href="/">
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
+                <img src="/vector.png" alt="Logo" className="w-36" />
               </NavigationMenuLink>
             </a>
           </NavigationMenuItem>
@@ -74,13 +74,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className,
           )}
           {...props}
         >
           <h5 className="font-medium leading-none">{title}</h5>
-          <p className="text-muted-foreground line-clamp-2 leading-snug text-sm">
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
         </a>
