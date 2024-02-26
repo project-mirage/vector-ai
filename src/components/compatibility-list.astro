@@ -1,6 +1,7 @@
 ---
-import { Icon } from "astro-icon/components";
 import type { CompatibilityItem } from "@/types";
+import { Icon } from "astro-icon/components";
+import CustomLink from "./CustomLink.astro";
 
 export interface Props {
   items: Array<CompatibilityItem>;
@@ -12,9 +13,9 @@ const { items, title, url } = Astro.props;
 ---
 
 <div class="w-full max-w-6xl space-y-2">
-  <div class="relative border border-default bg-offset px-6 pb-4 pt-8">
+  <div class="border-default bg-offset relative border px-6 pb-4 pt-8">
     <h3
-      class="absolute right-4 top-0 -translate-y-1/2 rounded-full border border-current bg-default px-4 py-1 uppercase tracking-tight text-xs"
+      class="bg-default absolute right-4 top-0 -translate-y-1/2 rounded-full border border-current px-4 py-1 text-xs uppercase tracking-tight"
     >
       {title}
     </h3>
@@ -22,10 +23,13 @@ const { items, title, url } = Astro.props;
       {
         items.map((item) => (
           <li>
-            <a class="flex flex-col items-center gap-2" href={item.url}>
+            <CustomLink
+              class="flex flex-col items-center gap-2"
+              href={item.url}
+            >
               <Icon class="size-12" name={item.icon} />
               <span>{item.title}</span>
-            </a>
+            </CustomLink>
           </li>
         ))
       }

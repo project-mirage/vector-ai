@@ -15,6 +15,7 @@ import TeamCard from "@/components/team-card.astro";
 import Menu from "@/components/Menu";
 import ContentSection from "@/components/content-section.astro";
 import { Icon } from "astro-icon/components";
+import CustomLink from "@/components/CustomLink.astro";
 ---
 
 <!doctype html>
@@ -76,7 +77,7 @@ import { Icon } from "astro-icon/components";
             // );
 
             return (
-              <a href={url}>
+              <CustomLink href={url}>
                 <DirectionAwareHover
                   client:load
                   imageUrl={member.data.image.src}
@@ -86,7 +87,7 @@ import { Icon } from "astro-icon/components";
                     <p>{member.data.designation}</p>
                   </div>
                 </DirectionAwareHover>
-              </a>
+              </CustomLink>
             );
           })
         }

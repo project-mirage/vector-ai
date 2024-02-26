@@ -24,7 +24,7 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <a
-          href={item?.link}
+          href={`/vector-ai/${item?.link}`}
           key={item?.link}
           className="group relative  block h-full w-full p-2"
           onMouseEnter={() => setHoveredIndex(idx)}
