@@ -1,94 +1,97 @@
 "use client";
-
-import * as React from "react";
-import { cn } from "@/utils";
+import React, { useState } from "react";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import { cn } from "@/utils/cn";
+import { Button } from "./ui/button";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "vFit",
-    href: "/products/vfit",
-    description:
-      "An innovative virtual try-on product enhancing online shopping with AI-driven personalization and try-on features.",
-  },
-];
+export const FloatingNav = ({
+  navItems,
+  className,
+}: {
+  navItems?: {
+    name: string;
+    link: string;
+  }[];
+  className?: string;
+}) => {
+  if (!navItems) {
+    navItems = [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "Team",
+        link: "/team",
+      },
+      {
+        name: "Products",
+        link: "/products",
+      },
+    ];
+  }
 
-export function Menu() {
+  const { scrollYProgress } = useScroll();
+
+  const [visible, setVisible] = useState(false);
+
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      let direction = current! - scrollYProgress.getPrevious()!;
+
+      if (scrollYProgress.get() < 0.05) {
+        setVisible(false);
+      } else {
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+    }
+  });
+
   return (
-    <div className="fixed left-0 top-0 z-10 w-full bg-white px-4 md:px-36">
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <a href="/">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <img src="/vector.png" alt="Logo" className="w-36" />
-              </NavigationMenuLink>
-            </a>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="z-10 grid w-[400px] gap-3 bg-white p-4 md:w-[400px] lg:w-[400px]">
-                {components.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                  >
-                    {component.description}
-                  </ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <a href="/team">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Team
-              </NavigationMenuLink>
-            </a>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        initial={{
+          opacity: 1,
+          y: -100,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        className={cn(
+          "fixed inset-x-0 top-10 z-[5000] mx-auto flex max-w-fit items-center justify-center rounded-full border border-transparent bg-white px-4 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-white/[0.2] dark:bg-black",
+          className,
+        )}
+      >
+        {navItems.map((navItem: any, idx: number) => (
+          <a
+            key={`link=${idx}`}
+            href={navItem.link}
+            className={cn(
+              "relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300",
+            )}
+          >
+            <Button variant="link">
+              <span className="text-sm">{navItem.name}</span>
+            </Button>
+          </a>
+        ))}
+      </motion.div>
+    </AnimatePresence>
   );
-}
+};
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-          {...props}
-        >
-          <h5 className="font-medium leading-none">{title}</h5>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-
-ListItem.displayName = "ListItem";
-
-export default Menu;
+export default FloatingNav;
