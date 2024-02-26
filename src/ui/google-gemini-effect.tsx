@@ -79,7 +79,7 @@ export const GoogleGeminiEffect = ({
   ];
 
   return (
-    <div className={cn("sticky top-80", className)}>
+    <div className={cn("sticky top-72", className)}>
       <div className="flex w-full justify-center">
         <img src="/vector-ai/vector.png" alt="vector logo" className="w-48 absolute -top-[170px]" />
       </div>
