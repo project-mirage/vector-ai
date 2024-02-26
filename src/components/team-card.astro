@@ -1,8 +1,5 @@
 ---
-import Menu from "@/components/Menu.tsx";
 import { Button } from "@/components/ui/button";
-import { getCollection, z } from "astro:content";
-import { Image } from "astro:assets";
 
 type Props = {
   name: string;
@@ -22,21 +19,21 @@ type Props = {
 const { name, designation, bio, image, socials } = Astro.props;
 ---
 
-<div class="bg-white dark:bg-gray-900">
+<div>
   <div
-    class="items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 2xl:flex"
+    class="mx-4 flex items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
   >
-    <p>
+    <div>
       <img
-        class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
+        class="rounded-lg object-contain"
         src={image.src}
         alt={name}
-        width={image.width}
-        height={image.height}
+        width={300}
+        height={300}
       />
-    </p>
+    </div>
 
-    <div class="p-5 2xl:max-w-[70%]">
+    <div class="w-[70%] p-5">
       <h3
         class="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
       >
@@ -55,12 +52,10 @@ const { name, designation, bio, image, socials } = Astro.props;
 
       {
         socials && (
-          <div class="flex flex-wrap">
+          <div class="mt-4 flex flex-wrap space-x-4">
             {socials.map((social) => (
-              <a href={social.url}>
-                <Button variant="link">
-                  {social.name.charAt(0).toUpperCase() + social.name.slice(1)}
-                </Button>
+              <a href={social.url} class="text-sm hover:underline">
+                {social.name.charAt(0).toUpperCase() + social.name.slice(1)}
               </a>
             ))}
           </div>

@@ -1,0 +1,60 @@
+---
+import CustomLink from "@/components/CustomLink.astro";
+import { DirectionAwareHover } from "@/components/DirectionAwareHover";
+import Menu from "@/components/Menu.tsx";
+import ContentSection from "@/components/content-section.astro";
+import TeamCard from "@/components/team-card.astro";
+import { Button } from "@/components/ui/button";
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const teamData = await getCollection("team");
+  const fullTeamData = teamData.map((member) => member.data);
+
+  return teamData.map((member) => ({
+    params: {
+      name: `${member.data.name.replaceAll(" ", "-").toLowerCase()}`,
+    },
+    props: { member: member.data, teamData: fullTeamData },
+  }));
+}
+
+const { member, teamData } = Astro.props;
+---
+
+<Menu client:load />
+
+<ContentSection id={member.name} title={`${member.name}`} className="py-12">
+  <div slot="eyebrow">
+    <Icon slot="eyebrow" name="mdi:person" class="size-32" />
+    <!-- <CustomLink href="/team">
+      <Button variant="destructive">Back to Team</Button>
+    </CustomLink> -->
+  </div>
+
+  <TeamCard {...member} />
+</ContentSection>
+
+<ContentSection id={""} title={`More of the team`} className="py-12">
+  <!-- <div slot="eyebrow">
+    <CustomLink href="/team">
+      <Button variant="destructive">Back to Team</Button>
+    </CustomLink>
+  </div> -->
+
+  <div class="grid w-5/6 gap-8 mx-auto mb-6 md:grid-cols-2 lg:mb-16 lg:grid-cols-3">
+    {
+      teamData.map((member) => (
+        <CustomLink href={`/${member.name.replaceAll(" ", "-").toLowerCase()}`}>
+          <DirectionAwareHover client:load imageUrl={member.image.src}>
+            <div>
+              <p>{member.name}</p>
+              <p>{member.designation}</p>
+            </div>
+          </DirectionAwareHover>
+        </CustomLink>
+      ))
+    }
+  </div>
+</ContentSection>

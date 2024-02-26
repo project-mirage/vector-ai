@@ -3,7 +3,8 @@ const { href, ...rest } = Astro.props;
 const isExternal = href.startsWith("http://") || href.startsWith("https://");
 const base = "vector-ai";
 const getPrefixedHref = (href: string) => {
-  return isExternal ? href : `/${base}/${href}`;
+  const out = isExternal ? href : `/${base}/${href}`;
+  return out.replace("//", "/");
 };
 ---
 
