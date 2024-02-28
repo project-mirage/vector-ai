@@ -3,6 +3,7 @@ import VFitCompare from "@/components/VFitCompare.tsx";
 import ContentSection from "@/components/content-section.astro";
 import { Icon } from "astro-icon/components";
 import Page from "@/frags/Page.astro";
+import Features from "@/components/features.astro";
 ---
 
 <Page title="vFit" description="Here's the vFit product developed by VECTOR">
@@ -30,6 +31,25 @@ import Page from "@/frags/Page.astro";
       </div>
     </Fragment>
   </ContentSection>
+
+  <Features
+    title="Target Landscape"
+    eyebrowIcon="mdi:webhook"
+    features={[
+      {
+        title: "Computer Vision",
+        description:
+          "In physical stores, these mirrors are equipped with a camera and Computer Vision technology for real-time try ons.",
+        icon: "mdi:camera-enhance-outline",
+      },
+      {
+        title: "Smart virtual mirrors",
+        description:
+          "Offering website plugins that integrate with online stores. Allowing users to try-on products online on their pictures.",
+        icon: "mdi:mirror",
+      },
+    ]}
+  />
 
   <ContentSection title="See vFit in action">
     <Icon slot="eyebrow" name="mdi:eye" class="size-32" />
