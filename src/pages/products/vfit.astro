@@ -6,6 +6,31 @@ import Page from "@/frags/Page.astro";
 ---
 
 <Page title="vFit" description="Here's the vFit product developed by VECTOR">
+  <ContentSection title="What is vFit?">
+    <Icon slot="eyebrow" name="mdi:chat-question" class="size-32" />
+    <Fragment slot="lead">
+      <div class="flex max-w-3xl flex-col items-center gap-4 text-balance px-8">
+        <p
+          class="text-balance text-center font-light text-gray-500 dark:text-gray-400 sm:text-xl"
+        >
+          Your customers are sitting at home and browsing your clothing products
+          online? They’re not sure if the apparel suits them well?
+        </p>
+
+        <p
+          class="text-balance text-center font-light text-gray-500 dark:text-gray-400 sm:text-xl"
+        >
+          vFit comes through with an immersive and innovative new experience
+          making online shopping truly exciting. It is an incoming virtual
+          try-on product that allows your shoppers to visualize themselves in
+          any clothes that they wish to purchase. With vFit, we are
+          revolutionizing the e-commerce experience through AI-driven
+          personalization and virtual try-on features.
+        </p>
+      </div>
+    </Fragment>
+  </ContentSection>
+
   <ContentSection title="See vFit in action">
     <Icon slot="eyebrow" name="mdi:eye" class="size-32" />
     <Fragment slot="lead">
@@ -19,7 +44,7 @@ import Page from "@/frags/Page.astro";
       </div>
     </Fragment>
 
-    <div class="grid max-w-[80%] grid-cols-2 gap-4">
+    <div class="grid max-w-[80%] grid-cols-1 gap-4 md:grid-cols-2">
       <VFitCompare
         client:visible
         imageOneUrl="/src/assets/slider_images/2_Original.jpeg"
@@ -31,8 +56,5 @@ import Page from "@/frags/Page.astro";
         imageTwoUrl="/src/assets/slider_images/1_TryOn.jpg"
       />
     </div>
-
-    <!-- imageOneUrl="https://raw.githubusercontent.com/nerdyman/stuff/main/libs/react-compare-slider/demo-images/lady-1.png"
-    imageTwoUrl="https://raw.githubusercontent.com/nerdyman/stuff/main/libs/react-compare-slider/demo-images/lady-2.png" -->
   </ContentSection>
 </Page>
