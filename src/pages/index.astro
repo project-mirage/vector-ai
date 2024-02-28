@@ -8,6 +8,7 @@ import Intro from "@/components/intro.astro";
 import Showcase from "@/components/showcase.astro";
 import "@/styles/index.css";
 import "@fontsource-variable/inter";
+import { Icon } from "astro-icon/components";
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -69,7 +70,36 @@ const description =
     </div> -->
     <div class="space-y-24 px-8 py-32">
       <Intro />
-      <Features />
+      <Features
+        title="Features"
+        eyebrowIcon="mdi:lightbulb-edison-outline"
+        features={[
+          {
+            title: "Generative AI",
+            description:
+              "Empower creativity with AI that can autonomously generate novel content, from textual to visual, enriching user interaction and experience.",
+            icon: "mdi:creation",
+          },
+          {
+            title: "Conversational Agents",
+            description:
+              "Implement AI-driven conversational agents that engage users in natural dialogue, enhancing customer support and user accessibility.",
+            icon: "mdi:chat-processing",
+          },
+          {
+            title: "Digital Image Processing",
+            description:
+              "Utilize sophisticated image processing methods to modify and improve digital images for various applications in both real-time and post-processing scenarios.",
+            icon: "mdi:image-outline",
+          },
+          {
+            title: "Computer Vision",
+            description:
+              "Incorporate advanced computer vision technology to enable machines to interpret and make decisions based on visual data from the real world.",
+            icon: "mdi:camera-enhance-outline",
+          },
+        ]}
+      />
       <Compatibility />
       <Showcase />
     </div>
