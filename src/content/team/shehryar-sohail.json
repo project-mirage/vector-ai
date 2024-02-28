@@ -1,5 +1,4 @@
 {
-    "A cool picture? ": "https://drive.google.com/open?id=1izUekjGeHfaBipaQDBn4lfODvF6KFw6E",
     "name": "Shehryar Sohail",
     "designation": "Co-Founder & Chief Technology Officer",
     "bio": "Shehryar Sohail manages the Services & Solutions Wing as the face of the company's technological representative. Additionally, he is known to address programming bugs for anyone experiencing them (If you've got some, now is the time to reach out to him :D). As part of his role, he stays updated on the latest technology trends that could be useful to our clients, products or just to have a chat over Chai. He may not often have the time to say it, but he Ioves working with the team and enjoys the vibrant atmosphere that VECTOR consistently provides.",
@@ -8,5 +7,6 @@
             "name": "linkedin",
             "url": "https://www.linkedin.com/in/shehryar718"
         }
-    ]
+    ],
+    "image": "/src/content/team/_images/woman.jpg"
 }

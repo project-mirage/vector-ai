@@ -1,12 +1,12 @@
 {
-    "A cool picture? ": "https://drive.google.com/open?id=1cSVu6pBfVoDwVseAmk9VkVYQWqJoOdCF",
     "name": "Ahmed Raza",
     "designation": "Machine Learning Intern",
     "bio": "As an ML intern at VECTOR, Ahmed brings a diverse range of passions and skills to the table. Hailing proudly from Sialkot, his journey in the realms of artificial intelligence is fueled by curiosity. Alongside his love for AI, he also happens to love the intersection of business strategy and creative content creation, particularly in the realms of IT, photography and videography. He finds immense joy in exploring the latest technologies, always eager to stay ahead of the curve and contribute innovative solutions to our projects. Sci-fi movies are not just a form of entertainment for him; they're a wellspring of inspiration, igniting his imagination and propelling him to push his boundaries. Here, within this dynamic team, he sees boundless opportunities to merge the passions and expertise, driving forward innovation and growth in exciting new ways.",
     "socials": [
         {
             "name": "linkedin",
-            "url": "www.linkedin.com/in/razatoor"
+            "url": "https://www.linkedin.com/in/razatoor"
         }
-    ]
+    ],
+    "image": "/src/content/team/_images/woman.jpg"
 }

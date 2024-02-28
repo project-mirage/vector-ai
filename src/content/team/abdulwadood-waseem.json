@@ -1,5 +1,4 @@
 {
-    "A cool picture? ": "https://drive.google.com/open?id=1SadoxqSbJ8T0HkTxibH-_9VFsJTZbCIs",
     "name": "Abdulwadood Waseem",
     "designation": "Co-Founder & Chief Operating Officer",
     "bio": "Abdulwadood is really good with technical stuff, especially Artificial Intelligence. He's like a problem-solving wizard and has this cool creative side too. He's not just all serious techie stuff \u2013 he's a fun and friendly person to be around.\n\nWhen it comes to sports, Abdulwadood likes to play cricket and badminton. It's pretty awesome how he can switch from coding to playing sports so easily.\n\nAbdulwadood is like a big thinker. He's always imagining how technology can make Pakistan better in the future. It's not just about writing code for him; he sees a future where technology helps our country grow in a positive way.His skills go beyond just computer stuff; he's on a mission to make sure technology plays a big role in making Pakistan a better place.",
@@ -8,5 +7,6 @@
             "name": "linkedin",
             "url": "https://www.linkedin.com/in/abdulwadoodwaseem/"
         }
-    ]
+    ],
+    "image": "/src/content/team/_images/woman.jpg"
 }

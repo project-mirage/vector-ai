@@ -1,12 +1,12 @@
 {
-    "A cool picture? ": "https://drive.google.com/open?id=1LVZNlzVgnnkHCG5EP3ZVu_QC048CmjIU",
     "name": "Zarmeen Tauseef",
     "designation": "Deep Learning Engineer",
     "bio": "Zarmeen Tauseef is a deep learning engineer who turns dreams into reality by sheer force of belief and algorithms. Inspired by the movie 'Big Hero 6,' she is passionate about creating cool tech. And that is exactly what she does at VECTOR Inc.! [Added Note by Management: She loves F1, and dies for good vibes]",
     "socials": [
         {
             "name": "linkedin",
-            "url": "www.linkedin.com/in/zarmeen-tauseef"
+            "url": "https://www.linkedin.com/in/zarmeen-tauseef"
         }
-    ]
+    ],
+    "image": "/src/content/team/_images/woman.jpg"
 }

@@ -1,5 +1,4 @@
 {
-    "A cool picture? ": "https://drive.google.com/open?id=1IT0VEbeTyuskyLEL-UYyVGeAonpEU262",
     "name": "Fakhir Ali",
     "designation": "Principal Deep Learning Engineer",
     "bio": "Fakhir has a way with words when it comes to talking to computers [Note by management: If Fakhir had a mother-tongue, it would be Python]\nFakhir believes that internet is all you need to learn anything.\nThe above two things take up most of Fakhir's time.\n\nNow let's see what GPT says about him :D\nMeet Fakhir, a wordsmith with a knack for conversing with computers. With an unwavering belief that the internet is the ultimate source of knowledge, Fakhir spends most of his time immersed in its endless depths, seeking to learn anything and everything it has to offer. Whether he's crafting code or delving into digital realms, Fakhir's passion for technology and learning knows no bounds. With a keen eye for innovation and a dedication to constant growth, he's always ready to explore new horizons and harness the power of the online world to fuel his curiosity and creativity.",
@@ -8,5 +7,6 @@
             "name": "linkedin",
             "url": "https://www.linkedin.com/in/fakhir--ali/"
         }
-    ]
+    ],
+    "image": "/src/content/team/_images/woman.jpg"
 }
