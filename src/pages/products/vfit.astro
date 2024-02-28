@@ -1,0 +1,38 @@
+---
+import VFitCompare from "@/components/VFitCompare.tsx";
+import ContentSection from "@/components/content-section.astro";
+import { Icon } from "astro-icon/components";
+import Page from "@/frags/Page.astro";
+---
+
+<Page title="vFit" description="Here's the vFit product developed by VECTOR">
+  <ContentSection title="See vFit in action">
+    <Icon slot="eyebrow" name="mdi:eye" class="size-32" />
+    <Fragment slot="lead">
+      <div class="flex max-w-3xl flex-col items-center gap-4 text-balance px-8">
+        <p
+          class="text-balance text-center font-light text-gray-500 dark:text-gray-400 sm:text-xl"
+        >
+          vFit is a plug-in solution for retail stores that equips their
+          customer base with an option to make more informed decision
+        </p>
+      </div>
+    </Fragment>
+
+    <div class="grid max-w-[80%] grid-cols-2 gap-4">
+      <VFitCompare
+        client:visible
+        imageOneUrl="/src/assets/slider_images/2_Original.jpeg"
+        imageTwoUrl="/src/assets/slider_images/2_TryOn.jpg"
+      />
+      <VFitCompare
+        client:visible
+        imageOneUrl="/src/assets/slider_images/1_Original.jpeg"
+        imageTwoUrl="/src/assets/slider_images/1_TryOn.jpg"
+      />
+    </div>
+
+    <!-- imageOneUrl="https://raw.githubusercontent.com/nerdyman/stuff/main/libs/react-compare-slider/demo-images/lady-1.png"
+    imageTwoUrl="https://raw.githubusercontent.com/nerdyman/stuff/main/libs/react-compare-slider/demo-images/lady-2.png" -->
+  </ContentSection>
+</Page>

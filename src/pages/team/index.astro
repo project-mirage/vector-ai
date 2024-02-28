@@ -1,97 +1,59 @@
 ---
 // import TeamCard from "@/components/TeamSliderCard.tsx";
+import CustomLink from "@/components/CustomLink.astro";
 import { DirectionAwareHover } from "@/components/DirectionAwareHover.tsx";
-import "@/styles/index.css";
-import "@fontsource-variable/inter";
+import ContentSection from "@/components/content-section.astro";
+import Page from "@/frags/Page.astro";
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
-const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
-const description =
-  "Meet the Innovators Behind Astro: Our Team | Lightning-Fast Web Development";
-
 const teamData = await getCollection("team");
-import TeamCard from "@/components/team-card.astro";
-import Menu from "@/components/Menu";
-import ContentSection from "@/components/content-section.astro";
-import { Icon } from "astro-icon/components";
-import CustomLink from "@/components/CustomLink.astro";
 ---
 
-<!doctype html>
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="generator" content={generator} />
+<Page title="Meet the Team" description="See all team members at VECTOR">
+  <ContentSection title="Our Team" id="team" className="mt-16">
+    <Icon slot="eyebrow" name="mdi:account-group" class="size-32" />
 
-    <title>Meet our Team - Vector</title>
-    <meta name="description" content={description} />
-
-    <!-- social media -->
-    <meta property="og:title" content="Astro" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
-  </head>
-
-  <body class="h-full overflow-x-hidden text-base bg-default text-default">
-    <Menu client:load />
-
-    <ContentSection title="Our Team" id="team" className="mt-16">
-      <Icon slot="eyebrow" name="mdi:account-group" class="size-32" />
-
-      <Fragment slot="lead">
-        <div
-          class="flex flex-col items-center max-w-3xl gap-4 px-8 text-balance"
+    <Fragment slot="lead">
+      <div class="flex max-w-3xl flex-col items-center gap-4 text-balance px-8">
+        <p
+          class="font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16"
         >
-          <p
-            class="font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16"
-          >
-            Meet the brains behind the innovation at Vector.
-          </p>
-        </div>
-      </Fragment>
-
-      <div
-        class="grid w-5/6 gap-8 mx-auto mb-6 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
-      >
-        {
-          teamData.map((member) => {
-            const sanitized = member.data.name
-              .replaceAll(" ", "-")
-              .toLowerCase();
-            const url = `/team/${sanitized}`;
-
-            // return (
-            //   <TeamCard
-            //     name={member.data.name}
-            //     designation={member.data.designation}
-            //     image={member.data.image}
-            //     bio={member.data.bio}
-            //     socials={member.data.socials}
-            //   />
-            // );
-
-            return (
-              <CustomLink href={url}>
-                <DirectionAwareHover
-                  client:load
-                  imageUrl={member.data.image.src}
-                >
-                  <div>
-                    <p>{member.data.name}</p>
-                    <p>{member.data.designation}</p>
-                  </div>
-                </DirectionAwareHover>
-              </CustomLink>
-            );
-          })
-        }
+          Meet the brains behind the innovation at Vector.
+        </p>
       </div>
-    </ContentSection>
-  </body>
-</html>
+    </Fragment>
+
+    <div
+      class="mx-auto mb-6 grid w-5/6 gap-8 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
+    >
+      {
+        teamData.map((member) => {
+          const sanitized = member.data.name.replaceAll(" ", "-").toLowerCase();
+          const url = `/team/${sanitized}`;
+
+          // return (
+          //   <TeamCard
+          //     name={member.data.name}
+          //     designation={member.data.designation}
+          //     image={member.data.image}
+          //     bio={member.data.bio}
+          //     socials={member.data.socials}
+          //   />
+          // );
+
+          return (
+            <CustomLink href={url}>
+              <DirectionAwareHover client:load imageUrl={member.data.image.src}>
+                <div>
+                  <p>{member.data.name}</p>
+                  <p>{member.data.designation}</p>
+                </div>
+              </DirectionAwareHover>
+            </CustomLink>
+          );
+        })
+      }
+    </div>
+  </ContentSection>
+</Page>

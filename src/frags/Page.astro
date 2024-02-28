@@ -1,0 +1,46 @@
+---
+import Menu from "@/components/Menu.tsx";
+import "@/styles/index.css";
+import "@fontsource-variable/inter";
+
+const { generator, site } = Astro;
+const socialImage = new URL("social.jpg", site);
+
+type Props = {
+  title: string;
+  description: string;
+  image?: string;
+};
+
+const { title, description } = Astro.props;
+const image = Astro.props.image ? Astro.props.image : socialImage;
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>{title} - VECTOR</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Astro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <slot name="head" />
+  </head>
+
+  <body class="bg-default text-default h-full overflow-x-hidden text-base">
+    <Menu client:idle />
+
+    <slot />
+  </body>
+</html>

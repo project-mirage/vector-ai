@@ -29,8 +29,8 @@ export const FloatingNav = ({
         link: "/team",
       },
       {
-        name: "Products",
-        link: "/products",
+        name: "vFit",
+        link: "/products/vfit",
       },
     ];
   }
@@ -78,7 +78,7 @@ export const FloatingNav = ({
         {navItems.map((navItem: any, idx: number) => (
           <a
             key={`link=${idx}`}
-            href={`/vector-ai/${navItem.link}`}
+            href={`/vector-ai${navItem.link}`}
             className={cn(
               "relative flex items-center space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300",
             )}
