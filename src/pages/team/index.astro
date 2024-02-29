@@ -2,6 +2,7 @@
 // import TeamCard from "@/components/TeamSliderCard.tsx";
 import CustomLink from "@/components/CustomLink.astro";
 import { DirectionAwareHover } from "@/components/DirectionAwareHover.tsx";
+import GridBackground from "@/components/GridBackground";
 import ContentSection from "@/components/content-section.astro";
 import Page from "@/frags/Page.astro";
 import { Icon } from "astro-icon/components";
@@ -11,49 +12,51 @@ const teamData = await getCollection("team");
 ---
 
 <Page title="Meet the Team" description="See all team members at VECTOR">
-  <ContentSection title="Our Team" id="team" className="mt-16">
-    <Icon slot="eyebrow" name="mdi:account-group" class="size-32" />
+  <GridBackground
+    heading="Vector's Team"
+    content="Meet the brains behind the innovation at Vector."
+  />
 
-    <Fragment slot="lead">
-      <div class="flex max-w-3xl flex-col items-center gap-4 text-balance px-8">
-        <p
-          class="font-light text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16"
-        >
-          Meet the brains behind the innovation at Vector.
-        </p>
+  <div class="relative z-10 mt-[100vh] bg-white">
+    <ContentSection title="Our Team" id="team" className="mt-16">
+      <Icon slot="eyebrow" name="mdi:account-group" class="size-32" />
+
+      <div
+        class="mx-auto mb-6 grid w-5/6 gap-8 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
+      >
+        {
+          teamData.map((member) => {
+            const sanitized = member.data.name
+              .replaceAll(" ", "-")
+              .toLowerCase();
+            const url = `/team/${sanitized}`;
+
+            // return (
+            //   <TeamCard
+            //     name={member.data.name}
+            //     designation={member.data.designation}
+            //     image={member.data.image}
+            //     bio={member.data.bio}
+            //     socials={member.data.socials}
+            //   />
+            // );
+
+            return (
+              <CustomLink href={url}>
+                <DirectionAwareHover
+                  client:load
+                  imageUrl={member.data.image.src}
+                >
+                  <div>
+                    <p>{member.data.name}</p>
+                    <p>{member.data.designation}</p>
+                  </div>
+                </DirectionAwareHover>
+              </CustomLink>
+            );
+          })
+        }
       </div>
-    </Fragment>
-
-    <div
-      class="mx-auto mb-6 grid w-5/6 gap-8 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
-    >
-      {
-        teamData.map((member) => {
-          const sanitized = member.data.name.replaceAll(" ", "-").toLowerCase();
-          const url = `/team/${sanitized}`;
-
-          // return (
-          //   <TeamCard
-          //     name={member.data.name}
-          //     designation={member.data.designation}
-          //     image={member.data.image}
-          //     bio={member.data.bio}
-          //     socials={member.data.socials}
-          //   />
-          // );
-
-          return (
-            <CustomLink href={url}>
-              <DirectionAwareHover client:load imageUrl={member.data.image.src}>
-                <div>
-                  <p>{member.data.name}</p>
-                  <p>{member.data.designation}</p>
-                </div>
-              </DirectionAwareHover>
-            </CustomLink>
-          );
-        })
-      }
-    </div>
-  </ContentSection>
+    </ContentSection>
+  </div>
 </Page>
