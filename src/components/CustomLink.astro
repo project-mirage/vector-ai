@@ -2,7 +2,18 @@
 const { href, ...rest } = Astro.props;
 const isExternal = href.startsWith("http://") || href.startsWith("https://");
 const base = "vector-ai";
+
 const getPrefixedHref = (href: string) => {
+  // check if already prefixed
+  if (href.startsWith(`/${base}/`)) {
+    return href;
+  }
+
+  // if mailto or tel, don't prefix
+  if (href.startsWith("mailto:") || href.startsWith("tel:")) {
+    return href;
+  }
+
   const out = isExternal ? href : `/${base}/${href}`;
   return out.replace("//", "/");
 };

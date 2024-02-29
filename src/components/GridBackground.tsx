@@ -8,11 +8,11 @@ export default function GridBackground({
   content,
 }: GridBackgroundProps) {
   return (
-    <div className="bg-grid-small-white/[0.3] fixed left-0 top-0 flex h-screen w-full items-center justify-center bg-black">
+    <div className="bg-grid-small-white/[0.3] fixed top-0 flex h-screen w-full items-center justify-center bg-black">
       {/* Radial gradient for the container to give a faded look */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      <div className="flex flex-col items-center justify-center w-full md:w-[50vw]">
+      <div className="flex w-full flex-col items-center justify-center md:w-[50vw]">
         <h1 className="fancy-color relative z-20 w-4/5 text-balance bg-clip-text py-8 text-center text-4xl font-bold text-transparent sm:text-7xl">
           {heading}
         </h1>

@@ -1,5 +1,6 @@
 ---
 import Menu from "@/components/Menu.tsx";
+import Footer from "@/components/footer.astro";
 import "@/styles/index.css";
 import "@fontsource-variable/inter";
 
@@ -42,5 +43,7 @@ const image = Astro.props.image ? Astro.props.image : socialImage;
     <Menu client:idle />
 
     <slot />
+
+    <Footer />
   </body>
 </html>
