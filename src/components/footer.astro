@@ -1,7 +1,9 @@
 ---
 import type { FooterLink } from "@/types";
+import { cn } from "@/utils/cn";
 import { Icon } from "astro-icon/components";
 import CustomLink from "./CustomLink.astro";
+import { buttonVariants } from "./ui/button";
 
 const links: Array<FooterLink> = [
   {
@@ -25,6 +27,21 @@ const links: Array<FooterLink> = [
     icon: "mdi:email",
   },
 ];
+
+const navItems = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "Team",
+    link: "/team",
+  },
+  {
+    name: "vFit",
+    link: "/products/vfit",
+  },
+];
 ---
 
 <footer class="relative z-20 bg-white">
@@ -44,7 +61,7 @@ const links: Array<FooterLink> = [
           links.map((link) => (
             <li>
               <CustomLink
-                class="me-4 transition-all hover:text-black hover:underline md:me-6"
+                class="me-6 transition-all hover:text-black hover:underline"
                 href={link.url}
                 rel="noreferrer"
                 target="_blank"
@@ -60,22 +77,62 @@ const links: Array<FooterLink> = [
 
     <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 
-    <div class="flex justify-between max-sm:flex-wrap">
-      <span
-        class="block text-sm text-gray-500 dark:text-gray-400 sm:text-center"
-        >© {new Date().getFullYear()}
-        <a href="/vector-ai/" class="hover:underline">VECTOR</a>. All Rights
-        Reserved.
-      </span>
-
-      <a
-        href="https://promirage.com/"
-        target="_blank"
-        rel="noreferrer"
-        class="text-sm text-gray-500 hover:text-[#FFA939] hover:underline sm:text-center"
+    <div
+      class="flex justify-between text-gray-500 max-sm:flex-wrap-reverse max-sm:text-center"
+    >
+      <div
+        class="flex w-full flex-wrap items-start justify-center *:w-full sm:w-2/5 sm:justify-start"
       >
-        Powered by Mirage
-      </a>
+        <h4 class="font-medium">Headquarters</h4>
+        <p class="text-balance">
+          Office No. 11, 3rd Floor, Al Hameed Mall, G-11 Markaz G 11 Markaz
+          G-11, Islamabad, Islamabad Capital Territory
+        </p>
+      </div>
+
+      <div
+        class="flex w-full flex-col flex-wrap items-start justify-center *:w-full max-sm:my-4 sm:w-2/5 sm:text-right"
+      >
+        <h4 class="font-medium">Founded</h4>
+        <p>June, 2023</p>
+      </div>
+    </div>
+
+    <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+
+    <div class="flex justify-between *:w-full *:items-center max-sm:flex-wrap">
+      <div class="flex justify-center max-md:my-2 md:justify-start">
+        <span
+          class="block text-sm text-gray-500 dark:text-gray-400 sm:text-center"
+          >© {new Date().getFullYear()}
+          <a href="/vector-ai/" class="hover:underline">VECTOR</a>. All Rights
+          Reserved.
+        </span>
+      </div>
+
+      <div class="flex justify-center max-md:my-2 md:justify-center">
+        {
+          navItems.map((item) => (
+            <CustomLink
+              href={item.link}
+              class={cn(buttonVariants({ variant: "link" }), "text-gray-500")}
+            >
+              {item.name}
+            </CustomLink>
+          ))
+        }
+      </div>
+
+      <div class="flex justify-center max-md:my-2 md:justify-end">
+        <a
+          href="https://promirage.com/"
+          target="_blank"
+          rel="noreferrer"
+          class="text-sm text-gray-500 hover:text-[#FFA939] hover:underline sm:text-center"
+        >
+          Powered by Mirage
+        </a>
+      </div>
     </div>
   </div>
 </footer>
