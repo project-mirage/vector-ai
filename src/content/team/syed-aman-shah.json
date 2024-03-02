@@ -1,6 +1,6 @@
 {
     "name": "Syed Aman Shah",
-    "designation": "Chief Strategy Officer ",
+    "designation": "Chief Strategy Officer",
     "bio": "Syed Aman Shah is a person with a range of interests and passions.With a strong passion for both football and bodybuilding, he embodies the spirit of athleticism and determination. Beyond his physical pursuits, he finds joy in delving into the realms of politics, business, history, and economics, constantly seeking to expand his understanding of the world. A dedicated early riser, he cherishes the quiet moments of the morning, often using them to fuel his workouts and set the tone for the day ahead. But what truly sets Syed apart is his unwavering admiration for revolutionaries like Che Guevara, Mandela, and the stirring verses of poets like Allama Muhammad Iqbal. Their courage and vision serve as a guiding light, inspiring him to embrace change and strive for a better tomorrow.",
     "socials": [
         {
@@ -8,5 +8,5 @@
             "url": "https://www.linkedin.com/in/syedamanshah1"
         }
     ],
-    "image": "/src/content/team/_images/woman.jpg"
+    "image": "/src/assets/team_images/syed-aman-shah.webp"
 }

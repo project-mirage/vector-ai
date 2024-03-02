@@ -1,12 +1,12 @@
 {
     "name": "Amna Usman",
-    "designation": "Product Designer & AI QA Analyst ",
-    "bio": "Amna Usman is a fiend for all things design, user experience, and creative branding. You might catch her browsing through case studies during peak exam season, if you haven\u2019t already caught her memorizing every TikTok sound known to mankind. She also loves teaching coding to children, as well as teaching the elderly how to pass their English Language exams.\n\nAmna believes that behind every successful product lies the brilliance of a product designer who values user experience. \"Customer is king,\" as they say, and Amna thinks no differently. From trying to perfect auto layout on Figma to wrapping her head around Adobe Illustrator, she is always open to learning new things to make any product a hit. She also loves drinking Safilo\u2019s cold coffee, even on a freezing day\u2014especially on a freezing day.",
+    "designation": "Product Designer & AI QA Analyst",
+    "bio": "Amna Usman is a fiend for all things design, user experience, and creative branding. You might catch her browsing through case studies during peak exam season, if you haven\u2019t already caught her memorizing every TikTok sound known to mankind. She also loves teaching coding to children, as well as teaching the elderly how to pass their English Language exams.  Amna believes that behind every successful product lies the brilliance of a product designer who values user experience. \"Customer is king,\" as they say, and Amna thinks no differently. From trying to perfect auto layout on Figma to wrapping her head around Adobe Illustrator, she is always open to learning new things to make any product a hit. She also loves drinking Safilo\u2019s cold coffee, even on a freezing day\u2014especially on a freezing day.",
     "socials": [
         {
             "name": "linkedin",
             "url": "https://www.linkedin.com/in/amna-us?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
         }
     ],
-    "image": "/src/content/team/_images/woman.jpg"
+    "image": "/src/assets/team_images/amna-usman.webp"
 }

@@ -1,12 +1,12 @@
 {
     "name": "Maaz Ali Nadeem",
     "designation": "Co-Founder & Chief Executive Officer",
-    "bio": "\"Start unknown and finish unforgettable\"  A line Maaz often rolls back to, and resonates with when asked about what keeps him going.  Maaz is a nerd - turned - community builder - turned - (entrepreneur?) who has evolved from wanting to build software to now building a business around it! \n\nMaaz enjoys the practice of being a peoples' person being at the forefront of the business strategy, personal branding and morning tone setting before the day at VECTOR starts. Maaz loves to practice, two inspirational but un-related concepts; Stoicism and Alchemy where these him navigate through acceptance, meaning and passion. \n",
+    "bio": "\"Start unknown and finish unforgettable\"  A line Maaz often rolls back to, and resonates with when asked about what keeps him going.  Maaz is a nerd - turned - community builder - turned - (entrepreneur?) who has evolved from wanting to build software to now building a business around it!  Maaz enjoys the practice of being a peoples' person being at the forefront of the business strategy, personal branding and morning tone setting before the day at VECTOR starts. Maaz loves to practice, two inspirational but un-related concepts; Stoicism and Alchemy where these him navigate through acceptance, meaning and passion. ",
     "socials": [
         {
             "name": "linkedin",
             "url": "https://www.linkedin.com/in/maazalinadeem/"
         }
     ],
-    "image": "/src/content/team/_images/woman.jpg"
+    "image": "/src/assets/team_images/maaz-ali-nadeem.webp"
 }

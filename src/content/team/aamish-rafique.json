@@ -1,12 +1,12 @@
 {
     "name": "Aamish Rafique",
     "designation": "Program Manager",
-    "bio": "Prolly the biggest hip-hop fan at VECTOR Inc. with a skillset inclusive of ML, CV, and NLP. I enjoy taking the lead (at basically anything), and doing the heavy lifting. I love to show my creativity through code, music, art, and of course, sarcasm. Always up for a challenge, whether it's diving into a new tech stack or tackling complex algorithms! \n\nAs a visionary I'm driven by the desire to push boundaries and wanting to leave a lasting legacy in the field. I'm also a big believer in the power of continuous learning and am constantly seeking out new skills and knowledge to add to my toolkit.\n\nWhen I'm not coding or leading, you can find me exploring new restaurants, reading a self-help book, or playing video games. I can gladly say I'm the most fun person at the office. I'm definitely the person to bring along with you on road trips as I have the playlist and humour for any occasion.",
+    "bio": "Prolly the biggest hip-hop fan at VECTOR Inc. with a skillset inclusive of ML, CV, and NLP. I enjoy taking the lead (at basically anything), and doing the heavy lifting. I love to show my creativity through code, music, art, and of course, sarcasm. Always up for a challenge, whether it's diving into a new tech stack or tackling complex algorithms!  As a visionary I'm driven by the desire to push boundaries and wanting to leave a lasting legacy in the field. I'm also a big believer in the power of continuous learning and am constantly seeking out new skills and knowledge to add to my toolkit.  When I'm not coding or leading, you can find me exploring new restaurants, reading a self-help book, or playing video games. I can gladly say I'm the most fun person at the office. I'm definitely the person to bring along with you on road trips as I have the playlist and humour for any occasion.",
     "socials": [
         {
             "name": "linkedin",
             "url": "https://www.linkedin.com/in/aamishrafique/"
         }
     ],
-    "image": "/src/content/team/_images/woman.jpg"
+    "image": "/src/assets/team_images/aamish-rafique.webp"
 }
