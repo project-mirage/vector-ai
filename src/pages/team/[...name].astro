@@ -1,12 +1,17 @@
 ---
 import CustomLink from "@/components/CustomLink.astro";
 import { DirectionAwareHover } from "@/components/DirectionAwareHover";
-import Menu from "@/components/Menu.tsx";
 import ContentSection from "@/components/content-section.astro";
 import TeamCard from "@/components/team-card.astro";
-import { Button } from "@/components/ui/button";
+import Page from "@/frags/Page.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { type TeamData, type Member } from "@/types";
+
+interface Props {
+  teamData: Member[];
+  member: Member;
+}
 
 export async function getStaticPaths() {
   const teamData = await getCollection("team");
@@ -23,36 +28,46 @@ export async function getStaticPaths() {
 const { member, teamData } = Astro.props;
 ---
 
-<Menu client:load />
-
-<ContentSection id={member.name} title={`${member.name}`} className="py-12">
-  <div slot="eyebrow">
-    <Icon slot="eyebrow" name="mdi:person" class="size-32" />
-    <!-- <CustomLink href="/team">
+<Page
+  title={`${member.name} -- ${member.designation} at Vector`}
+  description={`${member.name} is a ${member.designation} at Vector. Learn more about them and the rest of the team at Vector.`}
+>
+  <ContentSection id={member.name} title={`${member.name}`} className="py-12">
+    <div slot="eyebrow">
+      <Icon slot="eyebrow" name="mdi:person" class="size-32" />
+      <!-- <CustomLink href="/team">
       <Button variant="destructive">Back to Team</Button>
     </CustomLink> -->
-  </div>
+    </div>
 
-  <TeamCard {...member} />
-</ContentSection>
+    <TeamCard member={member} />
+  </ContentSection>
 
-<ContentSection title={`More of the team`} className="py-12">
-  <div
-    class="mx-auto mb-6 grid w-5/6 gap-8 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
-  >
-    {
-      teamData.map((member) => (
-        <CustomLink
-          href={`/team/${member.name.replaceAll(" ", "-").toLowerCase()}`}
-        >
-          <DirectionAwareHover client:load imageUrl={member.image.src}>
-            <div>
-              <p>{member.name}</p>
-              <p>{member.designation}</p>
-            </div>
-          </DirectionAwareHover>
-        </CustomLink>
-      ))
-    }
-  </div>
-</ContentSection>
+  <ContentSection title={`More of the team`} className="py-12">
+    <div
+      class="mx-auto mb-6 grid w-5/6 gap-8 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
+    >
+      {
+        teamData
+          .filter((localMember) => localMember.name !== member.name)
+          .map((localMember) => {
+            return (
+              <CustomLink
+                href={`/team/${localMember.name.replaceAll(" ", "-").toLowerCase()}`}
+              >
+                <DirectionAwareHover
+                  client:load
+                  imageUrl={localMember.image.src}
+                >
+                  <div>
+                    <p>{localMember.name}</p>
+                    <p>{localMember.designation}</p>
+                  </div>
+                </DirectionAwareHover>
+              </CustomLink>
+            );
+          })
+      }
+    </div>
+  </ContentSection>
+</Page>

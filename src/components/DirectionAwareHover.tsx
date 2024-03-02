@@ -62,7 +62,7 @@ export const DirectionAwareHover = ({
       onMouseEnter={handleMouseEnter}
       ref={ref}
       className={cn(
-        "group/card relative h-60 overflow-hidden rounded-lg bg-transparent md:h-96 md:w-96",
+        "group/card relative overflow-hidden rounded-lg bg-transparent",
         className,
       )}
     >
@@ -76,7 +76,7 @@ export const DirectionAwareHover = ({
           <motion.div className="absolute inset-0 z-10 hidden h-full w-full bg-black/40 transition duration-500 group-hover/card:block" />
           <motion.div
             variants={variants}
-            className="relative h-full w-full bg-gray-50 dark:bg-black"
+            className="relative h-full w-full"
             transition={{
               duration: 0.2,
               ease: "easeOut",

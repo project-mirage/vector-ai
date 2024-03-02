@@ -1,53 +1,42 @@
 ---
-import { Button } from "@/components/ui/button";
+import { type Member } from "@/types";
 
 type Props = {
-  name: string;
-  designation: string;
-  bio: string;
-  image: {
-    src: string;
-    width: number;
-    height: number;
-  };
-  socials: {
-    name: string;
-    url: string;
-  }[];
+  member: Member;
 };
 
-const { name, designation, bio, image, socials } = Astro.props;
+const { member } = Astro.props;
 ---
 
 <div>
   <div
-    class="mx-auto flex max-w-[80%] items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+    class="mx-auto flex max-w-[80%] items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 max-md:flex-wrap"
   >
     <div>
       <img
         class="rounded-lg object-contain"
-        src={image.src}
-        alt={name}
+        src={member.image.src}
+        alt={member.name}
         width={300}
         height={300}
       />
     </div>
 
-    <div class="ml-5 w-[70%] p-5">
-      <span class="text-gray-600 font-bold">
-        {designation}
+    <div class="p-4 md:ml-5 md:w-[70%]">
+      <span class="font-bold text-gray-600">
+        {member.designation}
       </span>
 
       <p
         class="mb-4 mt-3 text-balance text-sm font-light text-gray-500 dark:text-gray-400"
       >
-        {bio}
+        {member.bio}
       </p>
 
       {
-        socials && (
+        member.socials && (
           <div class="mt-4 flex flex-wrap space-x-4">
-            {socials.map((social) => (
+            {member.socials.map((social) => (
               <a href={social.url} class="text-sm hover:underline">
                 {social.name.charAt(0).toUpperCase() + social.name.slice(1)}
               </a>
