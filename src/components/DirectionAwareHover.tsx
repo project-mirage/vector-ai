@@ -73,7 +73,8 @@ export const DirectionAwareHover = ({
           whileHover={direction}
           exit="exit"
         >
-          <motion.div className="absolute inset-0 z-10 hidden h-full w-full bg-black/40 transition duration-500 group-hover/card:block" />
+          <motion.div className="absolute inset-0 z-10 h-full w-full bg-transparent transition-all group-hover/card:block group-hover/card:bg-black/40" />
+
           <motion.div
             variants={variants}
             className="relative h-full w-full"
@@ -113,6 +114,8 @@ export const DirectionAwareHover = ({
   );
 };
 
+const moveAmount = 10;
+
 const variants = {
   initial: {
     x: 0,
@@ -122,16 +125,16 @@ const variants = {
     y: 0,
   },
   top: {
-    y: 20,
+    y: moveAmount,
   },
   bottom: {
-    y: -20,
+    y: -moveAmount,
   },
   left: {
-    x: 20,
+    x: moveAmount,
   },
   right: {
-    x: -20,
+    x: -moveAmount,
   },
 };
 
