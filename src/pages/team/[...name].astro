@@ -4,12 +4,13 @@ import { DirectionAwareHover } from "@/components/DirectionAwareHover";
 import ContentSection from "@/components/content-section.astro";
 import TeamCard from "@/components/team-card.astro";
 import Page from "@/frags/Page.astro";
+import { type Member } from "@/types";
 import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
-import { type TeamData, type Member } from "@/types";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 interface Props {
-  teamData: Member[];
+  // teamData: Member[];
+  teamData: CollectionEntry<"team">["data"][];
   member: Member;
 }
 
@@ -35,15 +36,12 @@ const { member, teamData } = Astro.props;
   <ContentSection id={member.name} title={`${member.name}`} className="py-12">
     <div slot="eyebrow">
       <Icon slot="eyebrow" name="mdi:person" class="size-32" />
-      <!-- <CustomLink href="/team">
-      <Button variant="destructive">Back to Team</Button>
-    </CustomLink> -->
     </div>
 
     <TeamCard member={member} />
   </ContentSection>
 
-  <ContentSection title={`More of the team`} className="py-12">
+  <ContentSection title={`More of the team`} className="py-16">
     <div
       class="mx-auto mb-6 grid w-5/6 gap-8 md:grid-cols-2 lg:mb-16 lg:grid-cols-3"
     >

@@ -1,8 +1,9 @@
 ---
-import { type Member } from "@/types";
+import { Image } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
 
 type Props = {
-  member: Member;
+  member: CollectionEntry<"team">["data"];
 };
 
 const { member } = Astro.props;
@@ -13,12 +14,12 @@ const { member } = Astro.props;
     class="mx-auto flex max-w-[80%] items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 max-md:flex-wrap"
   >
     <div>
-      <img
+      <Image
         class="rounded-lg object-contain"
-        src={member.image.src}
+        src={member.image}
         alt={member.name}
-        width={300}
-        height={300}
+        width={Math.min(member.image.width, 400)}
+        height={member.image.height}
       />
     </div>
 
