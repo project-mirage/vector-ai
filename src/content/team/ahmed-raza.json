@@ -8,5 +8,6 @@
             "url": "https://www.linkedin.com/in/razatoor"
         }
     ],
-    "image": "/src/assets/team_images/ahmed-raza.webp"
+    "image": "/src/assets/team_images/ahmed-raza.webp",
+    "featured": 15
 }

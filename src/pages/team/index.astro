@@ -8,7 +8,14 @@ import Page from "@/frags/Page.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
-const teamData = await getCollection("team");
+const teamData = (await getCollection("team")).sort((a, b) => {
+  // Check if either `featured` is undefined, and handle sorting accordingly.
+  if (a.data.featured === undefined) return 1; // a goes after b
+  if (b.data.featured === undefined) return -1; // a goes before b
+
+  // Both `featured` are defined, so sort by numeric value
+  return a.data.featured - b.data.featured;
+});
 ---
 
 <Page title="Meet the Team" description="See all team members at VECTOR">

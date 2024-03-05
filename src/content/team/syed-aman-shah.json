@@ -8,5 +8,6 @@
             "url": "https://www.linkedin.com/in/syedamanshah1"
         }
     ],
-    "image": "/src/assets/team_images/syed-aman-shah.webp"
+    "image": "/src/assets/team_images/syed-aman-shah.webp",
+    "featured": 4
 }

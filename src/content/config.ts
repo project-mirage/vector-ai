@@ -25,6 +25,7 @@ const team = defineCollection({
           url: z.string().url(),
         }),
       ),
+      featured: z.number().min(1),
     }),
 });
 

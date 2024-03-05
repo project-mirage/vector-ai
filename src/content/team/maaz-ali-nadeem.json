@@ -8,5 +8,6 @@
             "url": "https://www.linkedin.com/in/maazalinadeem/"
         }
     ],
-    "image": "/src/assets/team_images/maaz-ali-nadeem.webp"
+    "image": "/src/assets/team_images/maaz-ali-nadeem.webp",
+    "featured": 1
 }

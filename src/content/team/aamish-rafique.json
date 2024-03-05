@@ -8,5 +8,6 @@
             "url": "https://www.linkedin.com/in/aamishrafique/"
         }
     ],
-    "image": "/src/assets/team_images/aamish-rafique.webp"
+    "image": "/src/assets/team_images/aamish-rafique.webp",
+    "featured": 5
 }

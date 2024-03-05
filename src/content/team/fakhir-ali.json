@@ -8,5 +8,6 @@
             "url": "https://www.linkedin.com/in/fakhir--ali/"
         }
     ],
-    "image": "/src/assets/team_images/fakhir-ali.webp"
+    "image": "/src/assets/team_images/fakhir-ali.webp",
+    "featured": 10
 }
