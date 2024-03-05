@@ -1,8 +1,8 @@
 ---
-import { Icon } from "astro-icon/components";
-import ContentSection from "@/components/content-section.astro";
-import { Button } from "@/components/ui/button.tsx";
 import CustomLink from "@/components/CustomLink.astro";
+import ContentSection from "@/components/content-section.astro";
+import { buttonVariants } from "@/components/ui/button.tsx";
+import { Icon } from "astro-icon/components";
 ---
 
 <ContentSection
@@ -25,12 +25,15 @@ import CustomLink from "@/components/CustomLink.astro";
   </Fragment>
 
   <div class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
-    <CustomLink href="/team">
-      <Button>More about the team</Button>
+    <CustomLink href="/team" class={buttonVariants()}>
+      More About The Team
     </CustomLink>
 
-    <CustomLink href="/products/vfit">
-      <Button variant="link">View our Flagship Product</Button>
+    <CustomLink
+      href="/products/vfit"
+      class={buttonVariants({ variant: "link" })}
+    >
+      View our Flagship Product
     </CustomLink>
   </div>
 </ContentSection>
