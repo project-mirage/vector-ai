@@ -9,42 +9,40 @@ type Props = {
 const { member } = Astro.props;
 ---
 
-<div>
-  <div
-    class="mx-auto flex max-w-[80%] items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-800 max-md:flex-wrap"
-  >
-    <div>
-      <Image
-        class="rounded-lg object-contain"
-        src={member.image}
-        alt={member.name}
-        width={Math.min(member.image.width, 400)}
-        height={member.image.height}
-      />
-    </div>
+<div
+  class="mx-auto flex max-w-[80%] items-center rounded-2xl bg-gray-50 shadow transition hover:shadow-xl dark:border-gray-700 dark:bg-gray-600 max-md:flex-wrap"
+>
+  <div>
+    <Image
+      class="rounded-lg object-contain"
+      src={member.image}
+      alt={member.name}
+      width={Math.min(member.image.width, 400)}
+      height={member.image.height}
+    />
+  </div>
 
-    <div class="p-4 md:ml-5 md:w-[70%]">
-      <span class="font-bold text-gray-600">
-        {member.designation}
-      </span>
+  <div class="p-4 md:ml-5 md:w-[70%]">
+    <span class="font-bold text-gray-600 dark:text-gray-300">
+      {member.designation}
+    </span>
 
-      <p
-        class="mb-4 mt-3 text-balance text-sm font-light text-gray-500 dark:text-gray-400"
-      >
-        {member.bio}
-      </p>
+    <p
+      class="mb-4 mt-3 text-balance text-sm font-light text-gray-500 dark:text-gray-200"
+    >
+      {member.bio}
+    </p>
 
-      {
-        member.socials && (
-          <div class="mt-4 flex flex-wrap space-x-4">
-            {member.socials.map((social) => (
-              <a href={social.url} class="text-sm hover:underline">
-                {social.name.charAt(0).toUpperCase() + social.name.slice(1)}
-              </a>
-            ))}
-          </div>
-        )
-      }
-    </div>
+    {
+      member.socials && (
+        <div class="mt-4 flex flex-wrap space-x-4">
+          {member.socials.map((social) => (
+            <a href={social.url} class="text-sm hover:underline">
+              {social.name.charAt(0).toUpperCase() + social.name.slice(1)}
+            </a>
+          ))}
+        </div>
+      )
+    }
   </div>
 </div>

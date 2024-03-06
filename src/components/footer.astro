@@ -44,24 +44,26 @@ const navItems = [
 ];
 ---
 
-<footer class="relative z-20 bg-white">
-  <div class="mx-auto w-full max-w-screen-xl p-4 md:py-8">
+<footer class="relative z-20 bg-white dark:bg-black dark:text-white">
+  <div
+    class="mx-auto w-full max-w-screen-xl p-4 text-gray-500 dark:text-gray-200 md:py-8"
+  >
     <div class="sm:flex sm:items-center sm:justify-between">
       <a
         href="/vector-ai/"
-        class="mb-4 flex items-center space-x-3 invert sm:mb-0"
+        class="mb-4 flex items-center space-x-3 invert dark:invert-0 sm:mb-0"
       >
         <img src="/vector-ai/vector.png" class="h-8" alt="Vector Logo" />
       </a>
 
       <ul
-        class="mb-6 flex flex-wrap items-center gap-4 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0"
+        class="mb-6 flex flex-wrap items-center gap-4 text-sm font-medium text-gray-500 dark:text-gray-300 sm:mb-0"
       >
         {
           links.map((link) => (
             <li>
               <CustomLink
-                class="me-6 transition-all hover:text-black hover:underline"
+                class="me-6 transition-all hover:text-black hover:underline dark:hover:text-white"
                 href={link.url}
                 rel="noreferrer"
                 target="_blank"
@@ -75,17 +77,17 @@ const navItems = [
       </ul>
     </div>
 
-    <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+    <hr class="my-6 border-gray-500 dark:border-gray-200 sm:mx-auto lg:my-8" />
 
     <div
-      class="flex justify-between text-gray-500 max-sm:flex-wrap-reverse max-sm:text-center"
+      class="flex justify-between max-sm:flex-wrap-reverse max-sm:text-center"
     >
       <div
         class="flex w-full flex-wrap items-start justify-center *:w-full sm:w-2/5 sm:justify-start"
       >
         <h4 class="font-medium">Headquarters</h4>
         <a
-          class="text-balance hover:underline w-fit"
+          class="w-fit text-balance hover:underline"
           href="https://maps.app.goo.gl/ZjUdTCReuMmup5AY9"
           target="_blank"
           rel="noreferrer"
@@ -103,12 +105,11 @@ const navItems = [
       </div>
     </div>
 
-    <hr class="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
+    <hr class="my-6 border-gray-500 dark:border-gray-200 sm:mx-auto lg:my-8" />
 
     <div class="flex justify-between *:w-full *:items-center max-sm:flex-wrap">
       <div class="flex justify-center max-md:my-2 md:justify-start">
-        <span
-          class="block text-sm text-gray-500 dark:text-gray-400 sm:text-center"
+        <span class="block text-sm sm:text-center"
           >© {new Date().getFullYear()}
           <a href="/vector-ai/" class="hover:underline">VECTOR</a>. All Rights
           Reserved.
@@ -120,7 +121,10 @@ const navItems = [
           navItems.map((item) => (
             <CustomLink
               href={item.link}
-              class={cn(buttonVariants({ variant: "link" }), "text-gray-500")}
+              class={cn(
+                buttonVariants({ variant: "link" }),
+                "text-gray-500 dark:text-gray-200 ",
+              )}
             >
               {item.name}
             </CustomLink>
@@ -133,7 +137,7 @@ const navItems = [
           href="https://promirage.com/"
           target="_blank"
           rel="noreferrer"
-          class="mirage-hover text-sm text-gray-500 sm:text-center"
+          class="mirage-hover text-sm sm:text-center"
         >
           Powered by Mirage
         </a>
