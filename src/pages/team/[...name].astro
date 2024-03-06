@@ -4,14 +4,12 @@ import { DirectionAwareHover } from "@/components/DirectionAwareHover";
 import ContentSection from "@/components/content-section.astro";
 import TeamCard from "@/components/team-card.astro";
 import Page from "@/frags/Page.astro";
-import { type Member } from "@/types";
 import { Icon } from "astro-icon/components";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 interface Props {
-  // teamData: Member[];
   teamData: CollectionEntry<"team">["data"][];
-  member: Member;
+  member: CollectionEntry<"team">["data"];
 }
 
 export async function getStaticPaths() {
