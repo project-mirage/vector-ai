@@ -23,3 +23,6 @@ pnpm-debug.log*
 # py and csv
 **/*.py
 **/*.csv
+
+# .zip
+**/*.zip
