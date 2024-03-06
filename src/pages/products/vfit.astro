@@ -1,10 +1,10 @@
 ---
+import GridBackground from "@/components/GridBackground";
 import VFitCompare from "@/components/VFitCompare.tsx";
 import ContentSection from "@/components/content-section.astro";
-import { Icon } from "astro-icon/components";
-import Page from "@/frags/Page.astro";
 import Features from "@/components/features.astro";
-import GridBackground from "@/components/GridBackground";
+import Page from "@/frags/Page.astro";
+import { Icon } from "astro-icon/components";
 
 import imageOneBefore from "@/assets/slider_images/1_Original.jpeg";
 import imageOneAfter from "@/assets/slider_images/1_TryOn.jpg";
@@ -88,4 +88,8 @@ import imageTwoAfter from "@/assets/slider_images/2_TryOn.jpg";
       </div>
     </ContentSection>
   </div>
+
+  <ContentSection title="See it to believe it">
+    <video controls src="/vector-ai/vFitVideo.mp4" class="w-4/5"></video>
+  </ContentSection>
 </Page>
