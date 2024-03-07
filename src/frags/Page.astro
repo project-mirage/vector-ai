@@ -39,7 +39,7 @@ const image = Astro.props.image ? Astro.props.image : socialImage;
     <slot name="head" />
   </head>
 
-  <body class="bg-default text-default dark h-full overflow-x-hidden text-base">
+  <body class="bg-default text-default h-full overflow-x-hidden text-base">
     <Menu client:idle />
 
     <slot />
