@@ -10,7 +10,10 @@ const { title, id, className } = Astro.props;
 
 <section
   id={id}
-  class:list={["flex scroll-mt-24 flex-col items-center gap-4 py-12 dark:bg-black", className]}
+  class:list={[
+    "flex scroll-mt-24 flex-col items-center gap-4 bg-white py-12 dark:bg-black",
+    className,
+  ]}
 >
   <div
     class="flex max-w-3xl flex-col items-center gap-4 text-balance capitalize"
